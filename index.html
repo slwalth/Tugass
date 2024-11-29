@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hewan Lucu nan imutt</title>
-    <style>
-        body {
+    
+    <title>Hewan Lucu</title>
+    
+</head>
+<style>
+    body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
@@ -39,40 +40,6 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        .gallery-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        .gallery-img:hover {
-            transform: scale(1.05);
-        }
-        .gallery-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.7);
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .gallery-btn:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-        .gallery-btn.prev { left: 10px; }
-        .gallery-btn.next { right: 10px; }
-        .section {
-            background-color: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
         .fact-list, .breed-list, .care-tips-list {
             list-style-type: none;
             padding: 0;
@@ -83,10 +50,6 @@
             padding: 15px;
             border-radius: 5px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .fact-list li:hover, .breed-list li:hover, .care-tips-list li:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .breed-list {
             display: grid;
@@ -104,28 +67,6 @@
             border-radius: 10px;
             margin-bottom: 2rem;
         }
-        .quiz-container {
-            background-color: #fff9c4;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
-        .quiz-options {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        .quiz-option {
-            background-color: #ffeb3b;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .quiz-option:hover {
-            background-color: #fdd835;
-        }
         footer {
             background-color: #ff9a8b;
             background-image: linear-gradient(90deg, #ff9a8b 0%, #ff6a88 55%, #ff99ac 100%);
@@ -134,26 +75,20 @@
             padding: 1rem;
             margin-top: 2rem;
         }
-        .hidden {
-            display: none;
-        }
-    </style>
-</head>
+</style>
+
+
 <body>
     <header>
         <div class="container">
-            <h1>Kucing yang imutt</h1>
+            <h1>Kucing imutt</h1>
             <p>Fakta unik dan kelucuan kucing ada di sini!! 😼😼😼</p>
         </div>
     </header>
 
     <main class="container">
-        <section class="image-gallery">
-            <img id="galleryImage" src="ragdoll.jpg" alt="ragdoll" width="1150" height="550">
-        </section>
-
-        <section class="section">
-            <h2>Fakta Menarik tentang Kucing nihhh</h2>
+     <section class="section">
+            <h2>Fakta Menarik tentang Kucing nihhhh</h2>
             <ul class="fact-list">
                 <li>Kucing dapat tidur hingga 16 jam sehari, menjadikan mereka juara tidur di dunia hewan.</li>
                 <li>Kucing memiliki 32 otot di setiap telinga, memungkinkan mereka untuk mendengar suara sangat halus.</li>
@@ -169,16 +104,16 @@
         <section class="section">
             <h2>Jenis-jenis Kucing Populer</h2>
             <ul class="breed-list">
-                <li onclick="showBreedInfo('Persia')">Persia</li>
-                <li onclick="showBreedInfo('Anggora')">Anggora</li>
-                <li onclick="showBreedInfo('Siam')">Siam</li>
-                <li onclick="showBreedInfo('Maine Coon')">Maine Coon</li>
-                <li onclick="showBreedInfo('British Shorthair')">British Shorthair</li>
-                <li onclick="showBreedInfo('Sphynx')">Sphynx</li>
-                <li onclick="showBreedInfo('Bengal')">Bengal</li>
-                <li onclick="showBreedInfo('Ragdoll')">Ragdoll</li>
+                <li>Persia</li>
+                <li>Anggora</li>
+                <li>Siam</li>
+                <li>Maine Coon</li>
+                <li>British Shorthair</li>
+                <li>Sphynx</li>
+                <li>Bengal</li>
+                <li>Ragdoll</li>
             </ul>
-            <div id="breedInfo" class="hidden"></div>
+           
         </section>
 
         <section class="section">
@@ -202,99 +137,13 @@
             <p>Kucing pertama yang pergi ke luar angkasa adalah kucing Prancis bernama Felicette pada tahun 1963. Ia melakukan perjalanan singkat selama 15 menit di atas Gurun Sahara dan berhasil kembali ke Bumi dengan selamat. Felicette dipilih dari 14 kandidat kucing astronot karena kemampuannya untuk tetap tenang dalam situasi stres.</p>
         </section>
 
-        <section class="quiz-container">
-            <h2>Kuis Kucing Lucu</h2>
-            <div id="quizQuestion"></div>
-            <div class="quiz-options" id="quizOptions"></div>
-            <p id="quizResult"></p>
-            <button onclick="nextQuestion()" id="nextQuestionBtn" style="display: none;">Pertanyaan Selanjutnya</button>
-        </section>
+       
     </main>
 
     <footer>
-        <div class="container">
-            <p>Disusun oleh Salwa dan Alya yang imooottttttt 😻😻😻</p>
+        <div>
+            <p>Disusun oleh <a href="https://www.instagram.com/slwalth/?igsh=eW1zbnBwM3h0bGp3">Salwa</a> dan Alya yang imooottttttt 😻😻😻</p>
         </div>
-    </footer>
-
-    <script>
-        const images = [
-            "/placeholder.svg?height=400&width=600&text=Kucing+Lucu",
-            "/placeholder.svg?height=400&width=600&text=Kucing+Tidur",
-            "/placeholder.svg?height=400&width=600&text=Kucing+Bermain",
-            "/placeholder.svg?height=400&width=600&text=Kucing+Makan"
-        ];
-        let currentImageIndex = 0;
-
-        function changeImage(direction) {
-            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-            document.getElementById('galleryImage').src = images[currentImageIndex];
-        }
-
-        const breedInfo = {
-            'Persia': 'Kucing Persia terkenal dengan bulu panjang dan wajah bulat yang menggemaskan. Mereka memiliki sifat tenang dan suka bermanja.',
-            'Anggora': 'Kucing Anggora berasal dari Turki dan memiliki bulu panjang yang lembut. Mereka energik dan sangat cerdas.',
-            'Siam': 'Kucing Siam memiliki warna tubuh kontras dan mata biru yang menawan. Mereka sangat vokal dan suka berinteraksi dengan pemiliknya.',
-            'Maine Coon': 'Maine Coon adalah salah satu ras kucing terbesar. Mereka memiliki bulu tebal dan ekor panjang berbulu. Sifatnya ramah dan mudah bergaul.',
-            'British Shorthair': 'British Shorthair memiliki tubuh yang kekar dengan bulu pendek yang tebal. Mereka tenang dan mudah dirawat.',
-            'Sphynx': 'Kucing Sphynx terkenal karena tidak berbulu. Mereka sangat aktif, cerdas, dan suka mencari kehangatan.',
-            'Bengal': 'Kucing Bengal memiliki pola bulu seperti macan tutul. Mereka sangat aktif, cerdas, dan suka bermain air.',
-            'Ragdoll': 'Ragdoll adalah kucing besar dengan sifat yang sangat lembut. Mereka suka mengikuti pemiliknya dan mudah rileks saat digendong.'
-        };
-
-        function showBreedInfo(breed) {
-            const infoDiv = document.getElementById('breedInfo');
-            infoDiv.innerHTML = `<h3>${breed}</h3><p>${breedInfo[breed]}</p>`;
-            infoDiv.classList.remove('hidden');
-        }
-
-        const quizQuestions = [
-            {
-                question: "Berapa lama kucing bisa tidur dalam sehari?",
-                options: ["8 jam", "12 jam", "16 jam", "20 jam"],
-                answer: 2
-            },
-            {
-                question: "Apa nama kucing pertama yang pergi ke luar angkasa?",
-                options: ["Garfield", "Tom", "Felicette", "Whiskers"],
-                answer: 2
-            },
-            {
-                question: "Kucing ras apa yang tidak memiliki bulu?",
-                options: ["Persia", "Sphynx", "Siamese", "Maine Coon"],
-                answer: 1
-            }
-        ];
-
-        let currentQuestionIndex = 0;
-
-        function loadQuestion() {
-            const questionData = quizQuestions[currentQuestionIndex];
-            document.getElementById('quizQuestion').innerHTML = `<h3>${questionData.question}</h3>`;
-            const optionsHtml = questionData.options.map((option, index) => 
-                `<button class="quiz-option" onclick="checkAnswer(${index})">${option}</button>`
-            ).join('');
-            document.getElementById('quizOptions').innerHTML = optionsHtml;
-            document.getElementById('quizResult').innerHTML = '';
-            document.getElementById('nextQuestionBtn').style.display = 'none';
-        }
-
-        function checkAnswer(selectedIndex) {
-            const questionData = quizQuestions[currentQuestionIndex];
-            if (selectedIndex === questionData.answer) {
-                document.getElementById('quizResult').innerHTML = ' WOW Benar! 🎉';
-            } else {
-                document.getElementById('quizResult').innerHTML = 'Maaf yaa, jawaban kamu salah.  Ayo coba lagi! 😆';
-            }
-            document.getElementById('nextQuestionBtn').style.display = 'block';
-        }
-
-        function nextQuestion() {
-            currentQuestionIndex = (currentQuestionIndex + 1) % quizQuestions.length;
-            loadQuestion();
-        }
-
-        loadQuestion();
-    </script>
+    </footer>  
 </body>
 </html>
